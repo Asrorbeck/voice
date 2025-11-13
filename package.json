@@ -1,0 +1,38 @@
+{
+  "name": "uzbekistan-central-bank-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://voice.asrorbeck.uz",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.901.0",
+    "@aws-sdk/s3-request-presigner": "^3.901.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "jspdf": "^3.0.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-hot-toast": "^2.6.0",
+    "react-router-dom": "^7.9.3",
+    "lucide-react": "^0.454.0",
+    "tailwindcss-animate": "^1.0.7",
+    "tailwind-merge": "^2.5.5",
+    "clsx": "^2.1.1",
+    "class-variance-authority": "^0.7.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.5.6",
+    "sass": "^1.93.2",
+    "tailwindcss": "^3.4.18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.8",
+    "typescript": "^5"
+  }
+}
