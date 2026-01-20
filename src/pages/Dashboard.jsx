@@ -157,22 +157,17 @@ export default function Dashboard({ language, setActivities }) {
 
       // Create FormData for the API request
       const formData = new FormData();
-      formData.append("file", file);
-      formData.append("token", API_CONFIG.token);
+      formData.append("audio_file", file);
 
       // Make API request to backend
       setIsGeneratingTranscript(true);
       setTranscriptProgress(0);
 
       const response = await fetch(
-        `${API_CONFIG.baseURL}${API_CONFIG.endpoint}`,
+        "http://79.116.177.128:55701/api/v1/transcribe_call?is_stereo=false&word_timestamps=false",
         {
           method: "POST",
-          mode: "cors",
-          credentials: "omit",
-          headers: {
-            "X-CSRFTOKEN": API_CONFIG.csrfToken,
-          },
+          // Let the browser set the multipart boundary automatically
           body: formData,
         }
       );
@@ -182,6 +177,7 @@ export default function Dashboard({ language, setActivities }) {
       setIsProcessing(false);
 
       if (!response.ok) {
+        console.log(response);
         throw new Error("Transkripsiya xatosi");
       }
 
@@ -404,19 +400,14 @@ Internal Administration System`;
     try {
       // Create FormData for the API request
       const formData = new FormData();
-      formData.append("file", uploadedFile);
-      formData.append("token", API_CONFIG.token);
+      formData.append("audio_file", uploadedFile);
 
       // Make API request to backend
       const response = await fetch(
-        `${API_CONFIG.baseURL}${API_CONFIG.endpoint}`,
+        "http://79.116.177.128:55701/api/v1/transcribe_call?is_stereo=false&word_timestamps=false",
         {
           method: "POST",
-          mode: "cors",
-          credentials: "omit",
-          headers: {
-            "X-CSRFTOKEN": API_CONFIG.csrfToken,
-          },
+          // Let the browser set the multipart boundary automatically
           body: formData,
         }
       );
